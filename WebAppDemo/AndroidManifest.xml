@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nhn.socomlab.webapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="11" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <receiver
+            android:name=".C2DMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter >
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.nhn.socomlab.webapp" />
+            </intent-filter>
+            <intent-filter >
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.nhn.socomlab.webapp" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:label="@string/app_name"
+            android:name=".WebAppChapterActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebApp"
+            android:name=".WebAppActivity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebApp01"
+            android:name=".WebApp01Activity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebApp02"
+            android:name=".WebApp02Activity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebApp03"
+            android:name=".WebApp03Activity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebApp04"
+            android:name=".WebApp04Activity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebApp05"
+            android:name=".WebApp05Activity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebApp06"
+            android:name=".WebApp06Activity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebAppScroll"
+            android:name=".WebAppScrollActivity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebAppCacheTest1"
+            android:name=".WebAppCacheTest1Activity" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WebAppCacheTest2"
+            android:name=".WebAppCacheTest2Activity" />
+    </application>
+
+    <permission
+        android:name="com.nhn.socomlab.webapp.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.nhn.socomlab.webapp.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+</manifest>
